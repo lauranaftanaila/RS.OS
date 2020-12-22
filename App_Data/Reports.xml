@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Reports>
+	<Categories>
+		<Category id ="1" name="categorie A">
+			<Report id="1" name = "Raport 1"/>
+			<Report id="2" name = "Raport 2"/>
+		</Category>
+		<Category  id ="2" name="categorie B">
+			<Report id="3" name = "Raport 3"/>
+			<Report id="4" name = "Raport 4"/>
+		</Category>
+		<Category id="3" name="categorie C">
+			<Report id="5" name = "Raport 5"/>
+			<Report id="6" name = "Raport 6"/>
+		</Category>
+		<Category id ="4" name="categorie D">
+			<Report id="7" name = "Raport 7"/>
+			<Report id ="8" name = "Raport 8"/>
+		</Category>
+	</Categories>
+</Reports>

@@ -1,0 +1,84 @@
+﻿ul, li {
+    List-style-type: none;
+    margin: 0;
+    padding: 0;
+  
+}
+
+    ul.treeRoot > li ul,
+    ul.treeRoot > li ul {
+        padding-left: 20px;
+       display:none;
+    }
+
+    ul.treeRoot li {
+        border-left: 1px solid #000;
+    }
+
+    ul.treeRoot ul li,
+    ul.treeRoot li {
+        border-left: 1px solid #000;
+        padding-left: 20px;
+        position: relative;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+        ul.treeRoot ul li:last-child:after,
+        ul.treeRoot li:last-child:after {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            top: 12px;
+            width: 1px;
+            left: -1px;
+            bottom: 0;
+            background: #fff
+        }
+
+        ul.treeRoot ul li:before,
+        ul.treeRoot li:before {
+            height: 1px;
+            background: #000;
+            width: 15px;
+            left: 0;
+            top: 11px;
+         display: inline-block;
+            content: "";
+            position: absolute;
+        }
+
+.treeRoot li ul {
+    display: none;
+}
+
+    .treeRoot li ul.activeSubMenu {
+        display: block;
+    }
+
+
+.a {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    text-decoration: wavy;
+    color: #000000;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.a:hover, .a:hover + ul li a {
+    background: #ba5050;
+    color: #ffd800;
+    border: 1px solid #dd4814;
+}
+    /*Connector styles on hover*/
+    .a:hover + ul li::after,
+    .a:hover + ul li::before,
+    .a:hover + ul::before,
+    .a:hover + ul ul::before {
+        border-color: #dd4814;
+    }

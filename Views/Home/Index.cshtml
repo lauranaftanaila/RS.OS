@@ -1,0 +1,77 @@
+﻿@model List<RS.TreeView.Models.CategoryVW>
+
+@section head{
+    @Styles.Render("~/Content/tree.css")
+}
+<div class="panel panel-primary" style="margin-top:10px">
+    <div class="panel-heading panel-head">RS.OS.Web.Treeview</div>
+
+    <div id="frm-author" class="panel-body">
+
+        @using (Html.BeginForm())
+        {
+
+            <div>
+                <ul class="treeRoot">
+                    <li class="hasSubMenu">
+                        <span><a href="#" class="a">Rapoarte</a></span>
+
+                        @for (int i = 0; i < Model.Count(); i++)
+                        {
+                            <ul class="activeSubMenu">
+                                <li class="hasSubMenu">
+
+                                    <span>
+
+                                        <a href="#" class="a">
+
+                                            <label for=@i>
+
+                                                @Html.DisplayFor(model => model[i].Category)
+
+
+                                            </label>
+
+                                        </a>
+
+                                    </span>
+
+                                    <ul>
+
+                                        @for (int j = 0; j < Model[i].ReportVW.Count(); j++)
+                                        {
+
+                                            int k = 1 + j;
+
+                                            <li class="hasSubMenu">
+
+                                                <a href="#" class="a">
+                                                    <label for=@i@j>
+                                                        @Html.DisplayFor(model => model[i].ReportVW[j].Report)
+
+                                                    </label>
+                                                </a>
+
+                                            </li>
+
+                                        }
+                                    </ul>
+
+                                </li>
+                            </ul>
+                        }
+
+
+                    </li>
+                </ul>
+
+
+            </div>
+        }
+     </div>
+ </div>
+
+        @section scripts{
+            @Scripts.Render("~/Scripts/tree.js")
+        }
+
